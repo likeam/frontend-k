@@ -1,9 +1,14 @@
 import "./ProductDisplay.css";
 import star from "../assets/star_icon.png";
 import stardull from "../assets/star_dull_icon.png";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ProductDisplay = (props) => {
+
   const { product } = props;
+  const {addToCart} = useContext(ShopContext)
+
   return (
     <div className="productdisplay">
       <div className="productdisplay-left">
@@ -40,24 +45,26 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <div className="productdisplay-right-description">
-            A loghtweight, usually knitted, pullover shirt, close-fiting and with a round neckline and short sleeves, worn as an undershirt or oter garment.
+          A loghtweight, usually knitted, pullover shirt, close-fiting and with
+          a round neckline and short sleeves, worn as an undershirt or oter
+          garment.
         </div>
         <div className="productdisplay-right-size">
-            <h1>Select Size</h1>
-            <div className="productdisplay-right-sizes">
-                <div>S</div>
-                <div>M</div>
-                <div>L</div>
-                <div>XL</div>
-                <div>XXL</div>
-            </div>
+          <h1>Select Size</h1>
+          <div className="productdisplay-right-sizes">
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>XL</div>
+            <div>XXL</div>
+          </div>
         </div>
-        <button>ADD TO CART</button>
+        <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
         <p className="productdisplay-right-category">
-            <span>Category </span> Women , T-Shirits , Crop Top
+          <span>Category </span> Women , T-Shirits , Crop Top
         </p>
         <p className="productdisplay-right-category">
-            <span>Tags </span> Modren , Latest
+          <span>Tags </span> Modren , Latest
         </p>
       </div>
     </div>
