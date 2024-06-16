@@ -21,6 +21,12 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev,[itemId]: prev[itemId]-1}))
     }
+    const getTotalCartAmount = (itemId) =>{
+        let totalAmount = 0
+        for(let index = 0; index < all_product.length; index++){
+            totalAmount += all_product[index].new_price * cartItems[index]
+        }
+    }
 
     const contextValue = {all_product, cartItems, addToCart, removeFromCart}
 

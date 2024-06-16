@@ -32,14 +32,44 @@ const CartItem = () => {
                   src={romoveIcon}
                   onClick={() => removeFromCart(e.id)}
                   alt=""
-                  className=""
+                  className="cartitem-remove-icon"
                 />
               </div>
               <hr />
             </div>
           );
         }
+        return null;
       })}
+      <div className="cartitem-down">
+        <div className="cartitem-total">
+          <h1>Cart Totals</h1>
+          <div>
+            <div className="cartitem-total-item">
+              <p>Subtotal</p>
+              <p>${0}</p>
+            </div>
+            <hr />
+            <div className="cartitem-total-item">
+                <p>Shipping Free</p>
+                <p>Free</p>
+            </div>
+            <hr />
+            <div className="cartitem-total-item">
+              <h3>Total</h3>
+              <h3>Rs {0}</h3>
+            </div>
+          </div>
+          <button>PROCEED TO CHECKOUT</button>
+        </div>
+        <div className="cartitem-promocode">
+          <p>If you have a promo code, Enter it here</p>
+          <div className="cartitem-promobox">
+            <input type="text" placeholder="promo coede" />
+            <button>Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
