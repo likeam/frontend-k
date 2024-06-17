@@ -23,8 +23,8 @@ const ShopContextProvider = (props) => {
     }
     const getTotalCartAmount = (itemId) =>{
         let totalAmount = 0
-        for(let index = 0; index < all_product.length; index++){
-            totalAmount += all_product[index].new_price * cartItems[index]
+        for(const item in cartItems){
+           if
         }
     }
 
