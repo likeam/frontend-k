@@ -24,7 +24,7 @@ const ShopContextProvider = (props) => {
     const getTotalCartAmount = (itemId) =>{
         let totalAmount = 0
         for(const item in cartItems){
-           if
+           
         }
     }
 
