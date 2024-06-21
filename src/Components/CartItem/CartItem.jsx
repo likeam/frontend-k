@@ -4,7 +4,7 @@ import { ShopContext } from "../../Context/ShopContext";
 import romoveIcon from "../assets/cart_cross_icon.png";
 
 const CartItem = () => {
-  const { all_product, cartItems, addToCart, removeFromCart } =
+  const { all_product, cartItems, addToCart, removeFromCart, getTotalCartAmount } =
     useContext(ShopContext);
 
   return (
@@ -47,7 +47,7 @@ const CartItem = () => {
           <div>
             <div className="cartitem-total-item">
               <p>Subtotal</p>
-              <p>${0}</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cartitem-total-item">
@@ -57,7 +57,7 @@ const CartItem = () => {
             <hr />
             <div className="cartitem-total-item">
               <h3>Total</h3>
-              <h3>Rs {0}</h3>
+              <h3>Rs {getTotalCartAmount()}</h3>
             </div>
           </div>
           <button>PROCEED TO CHECKOUT</button>
