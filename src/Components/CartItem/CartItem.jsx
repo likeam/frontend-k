@@ -4,8 +4,13 @@ import { ShopContext } from "../../Context/ShopContext";
 import romoveIcon from "../assets/cart_cross_icon.png";
 
 const CartItem = () => {
-  const { all_product, cartItems, addToCart, removeFromCart, getTotalCartAmount } =
-    useContext(ShopContext);
+  const {
+    all_product,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    getTotalCartAmount,
+  } = useContext(ShopContext);
 
   return (
     <div className="cartitem">
@@ -27,7 +32,7 @@ const CartItem = () => {
                 <p>{e.name}</p>
                 <p>Rs {e.new_price}</p>
                 <button className="catitem-quantity">{cartItems[e.id]}</button>
-                <p>Rs {e.new_price*cartItems[e.id]}</p>
+                <p>Rs {e.new_price * cartItems[e.id]}</p>
                 <img
                   src={romoveIcon}
                   onClick={() => removeFromCart(e.id)}
@@ -51,8 +56,8 @@ const CartItem = () => {
             </div>
             <hr />
             <div className="cartitem-total-item">
-                <p>Shipping Free</p>
-                <p>Free</p>
+              <p>Shipping Free</p>
+              <p>Free</p>
             </div>
             <hr />
             <div className="cartitem-total-item">
